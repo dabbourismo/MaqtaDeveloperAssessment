@@ -42,7 +42,8 @@ namespace DataAccess.EmployeeRepository
         {
             try
             {
-                return await context.Employees.FindAsync(id);
+                var result = await context.Employees.FindAsync(id);
+                return result;
             }
             catch (Exception ex)
             {

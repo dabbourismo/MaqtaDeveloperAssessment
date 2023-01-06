@@ -19,8 +19,9 @@ namespace APIGateway
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            var enableCorsPolicy = builder.Configuration.GetSection("keys")["jwtKey"];
-            builder.Services.RegisterCors(enableCorsPolicy);
+            var enableCorsPolicy = builder.Configuration.GetSection("Polices")["enableCors"];
+            var origins = builder.Configuration.GetSection("keys")["Origins"];
+            builder.Services.RegisterCors(enableCorsPolicy, origins);
 
             builder.Services.RegisterJwt(builder.Configuration.GetSection("keys"));
 

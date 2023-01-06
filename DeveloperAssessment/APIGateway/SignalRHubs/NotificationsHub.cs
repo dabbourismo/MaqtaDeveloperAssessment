@@ -6,7 +6,7 @@ namespace APIGateway.SignalRHubs
     /// <summary>
     /// SignalR configuration for notifications
     /// </summary>
-    //[Authorize]
+    [Authorize]
     public class NotificationsHub : Hub
     {
         public override async Task OnConnectedAsync()

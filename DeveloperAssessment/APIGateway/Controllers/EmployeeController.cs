@@ -7,7 +7,7 @@ using Models.DBModels;
 
 namespace APIGateway.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class EmployeeController : BaseController
     {
         private readonly IEmployeeService _employeeManager;
@@ -77,7 +77,7 @@ namespace APIGateway.Controllers
         [HttpGet]
         public async Task<IActionResult> GetEmployeeByID(int id)
         {
-            var result = _employeeManager.GetEmployeeByID(id);
+            var result = await _employeeManager.GetEmployeeByID(id);
             return Ok(result);
         }
 

@@ -2,16 +2,16 @@
 {
     public static class CORSSetup
     {
-        public static IServiceCollection RegisterCors(this IServiceCollection services,string enableCorsPolicy)
+        public static IServiceCollection RegisterCors(this IServiceCollection services,string enableCorsPolicy,string origins)
         {
             services.AddCors(x =>
             {
                 x.AddPolicy(enableCorsPolicy, z =>
                 {
-                    z.WithOrigins("http://localhost:4200")
-                    //.AllowAnyOrigin()
+                    z.WithOrigins(origins)
                      .AllowAnyHeader()
-                     .AllowAnyMethod();
+                     .AllowAnyMethod()
+                     .AllowCredentials();
                 });
             });
             return services;
