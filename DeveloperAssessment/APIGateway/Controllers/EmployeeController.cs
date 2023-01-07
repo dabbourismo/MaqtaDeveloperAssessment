@@ -16,7 +16,7 @@ namespace APIGateway.Controllers
             _employeeManager = employeeManager;
         }
         /// <summary>
-        /// Web action used to insert new employee,phone number must be UAE number
+        /// Web action used to insert new employee
         /// </summary>
         /// <param name="employee"></param>
         /// <returns></returns>

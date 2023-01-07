@@ -14,7 +14,6 @@ namespace Models.CustomModels
         [StringLength(250, MinimumLength = 3)]
         public string Name { get; set; }
 
-        //[RegularExpression(@"""^(?:00971|\+971|0)?(?:50|51|52|55|56|58|2|3|4|6|7|9)\d{7}$""gm")]
         public string Phone { get; set; }
     }
 }
